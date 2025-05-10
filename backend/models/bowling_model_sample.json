@@ -1,0 +1,16 @@
+{
+  "overs": {
+    "complete_overs": 4,
+    "partial_overs": 1
+  },
+  "runs_conceded": 50,
+  "wickets": 2,
+  "bowler_average": 25.0,
+  "economy_rate": 12.0,
+  "best_bowling": {
+    "enabled": true,
+    "wickets": 2,
+    "runs_conceded": 45
+  },
+  "purple_caps": 1
+}

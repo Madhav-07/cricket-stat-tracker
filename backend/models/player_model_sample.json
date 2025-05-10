@@ -1,0 +1,33 @@
+{
+  "name": "Player 2",
+  "matches": 0,
+  "batting_stats": {
+    "innings": 0,
+    "runs": 0,
+    "balls_faced": 0,
+    "fours": 0,
+    "sixes": 0,
+    "strike_rate": null,
+    "average_runs": null,
+    "highest_score": 0,
+    "fifty": 0,
+    "century": 0,
+    "orange_caps": 0
+  },
+  "bowling_stats": {
+    "overs": {
+      "complete_overs": 0,
+      "partial_overs": 0
+    },
+    "runs_conceded": 0,
+    "wickets": 0,
+    "bowler_average": null,
+    "economy_rate": null,
+    "best_bowling": {
+      "enabled": false,
+      "wickets": 0,
+      "runs_conceded": 0
+    },
+    "purple_caps": 0
+  }
+}
