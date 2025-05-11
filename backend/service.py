@@ -1,18 +1,22 @@
 from constants import year_path, player_records_path
 from file_store import file_store
 from models.player_model import player_input, player_model
-from backend.models.player_stats_record_model import player_stats_record_model
+from models.player_stats_record_model import player_stats_record_model
 
 class service:
+  file_reader: file_store
   current_year: str
   player_stats_record: player_stats_record_model
 
   def __init__(self):
+    self.file_reader = file_store()
     self.get_player_stat_record()
     self.get_current_year()
 
   def get_player_stat_record(self):
-    file_content = file_store.read_json(player_records_path)
+    file_content = self.file_reader.read_json(player_records_path)
+    if not file_content:
+      file_content = {}
     self.player_stats_record = player_stats_record_model(**file_content) if file_content else player_stats_record_model()
 
   def get_current_year(self) -> None:
