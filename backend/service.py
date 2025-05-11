@@ -1,6 +1,6 @@
 from constants import year_path, player_records_path
 from file_store import file_store
-from models.player_model import player_input
+from models.player_model import player_input, player_model
 from backend.models.player_stats_record_model import player_stats_record_model
 
 class service:
@@ -31,6 +31,9 @@ class service:
     self.current_year = str(int(self.current_year) + 1)
     with open(year_path, 'w') as file:
       file.write(self.current_year)
+
+  def get_default_player_stats(self) -> list[player_model]:
+    pass
 
   def add_or_update_player(self, player_name: str, player_stats: player_input) -> None:
     self.player_stats_record.update(self.current_year, player_name, player_stats)
