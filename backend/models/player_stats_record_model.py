@@ -2,7 +2,7 @@ from models.batting_model import batting_input
 from models.bowling_model import bowling_input, overs_model
 from models.player_model import player_model, player_input
 
-class player_stats_record:
+class player_stats_record_model:
   player_records: dict[str, dict[int, player_model]]
 
   def __init__(self, **kwargs):
@@ -31,16 +31,16 @@ class player_stats_record:
   
 if __name__ == "__main__":
   from testing.test_utils import expect
-  # player_stats = player_stats_record()
-  # expect(player_stats.to_dict()).to_equal({})
+  player_stats = player_stats_record_model()
+  expect(player_stats.to_dict()).to_equal({})
 
-  # player_inp = player_input(
-  #   batting_stats=batting_input(runs=10, balls_faced=20, fours=2, sixes=1),
-  #   bowling_stats=bowling_input(overs=overs_model(2,5), runs_conceded=30, wickets=1)
-  # )
+  player_inp = player_input(
+    batting_stats=batting_input(runs=10, balls_faced=20, fours=2, sixes=1),
+    bowling_stats=bowling_input(overs=overs_model(2,5), runs_conceded=30, wickets=1)
+  )
 
-  # player_stats.update(1, "Player 1", player_inp)
-  # print(player_stats.to_dict())
+  player_stats.update(1, "Player 1", player_inp)
+  print(player_stats.to_dict())
 
   inp = {
     'Player 1': {
@@ -112,5 +112,9 @@ if __name__ == "__main__":
       }
     }
   }
-  new_player_stats = player_stats_record(**inp)
+  new_player_stats = player_stats_record_model(**inp)
   expect(new_player_stats.to_dict()).to_equal(inp)
+
+  from constants import player_stats_record_sample_path
+  import json
+  json.dump(new_player_stats.to_dict(), open(player_stats_record_sample_path, "w"), indent=2)
