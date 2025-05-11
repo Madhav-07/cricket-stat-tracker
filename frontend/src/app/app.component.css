@@ -1,0 +1,17 @@
+header {
+  max-height: fit-content;
+  align-content: center;
+  padding-left: 10px;
+  background: linear-gradient(100deg, #8a07ff, #f500d7);
+  margin: 0 0;
+  border: 1px solid black;
+}
+
+footer {
+  max-height: fit-content;
+  align-content: center;
+  padding-left: 10px;
+  background: linear-gradient(100deg, #f500d7, #8a07ff);
+  margin: 0 0;
+  border-top: 1px solid black;
+}

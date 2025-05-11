@@ -87,7 +87,7 @@ class bowling_model:
   overs: overs_model
   runs_conceded: int
   wickets: int
-  bowler_average: float # Average runs per wicket
+  bowling_average: float # Average runs per wicket
   economy_rate: float
   best_bowling: best_bowling_model
   purple_caps: int
@@ -96,7 +96,7 @@ class bowling_model:
     self.overs = overs_model()
     self.runs_conceded = 0
     self.wickets = 0
-    self.bowler_average = None
+    self.bowling_average = None
     self.economy_rate = None
     self.best_bowling = best_bowling_model()
     self.purple_caps = 0
@@ -117,7 +117,7 @@ class bowling_model:
     self.wickets += bowling_input.wickets
 
     if self.wickets > 0:
-      self.bowler_average = round(self.runs_conceded / self.wickets, 2)
+      self.bowling_average = round(self.runs_conceded / self.wickets, 2)
     
     if self.overs.complete_overs != 0 or self.overs.partial_overs != 0:
       self.economy_rate = round(6 * self.runs_conceded / (self.overs.complete_overs*6 + self.overs.partial_overs), 2)
@@ -131,7 +131,7 @@ class bowling_model:
       "overs": self.overs.to_dict(),
       "runs_conceded": self.runs_conceded,
       "wickets": self.wickets,
-      "bowler_average": self.bowler_average,
+      "bowling_average": self.bowling_average,
       "economy_rate": self.economy_rate,
       "best_bowling": self.best_bowling.to_dict(),
       "purple_caps": self.purple_caps
@@ -142,7 +142,7 @@ class bowling_model:
       str(self.overs),
       str(self.runs_conceded),
       str(self.wickets),
-      str(self.bowler_average),
+      str(self.bowling_average),
       str(self.economy_rate),
       str(self.best_bowling),
       str(self.purple_caps)
@@ -171,7 +171,7 @@ if __name__ == "__main__":
     },
     "runs_conceded": 45,
     "wickets": 2,
-    "bowler_average": 22.5,
+    "bowling_average": 22.5,
     "economy_rate": 18.0,
     "best_bowling": {
       "enabled": True,
@@ -189,7 +189,7 @@ if __name__ == "__main__":
     },
     "runs_conceded": 50,
     "wickets": 2,
-    "bowler_average": 25.0,
+    "bowling_average": 25.0,
     "economy_rate": 12.0,
     "best_bowling": {
       "enabled": True,

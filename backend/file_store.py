@@ -1,4 +1,5 @@
 import json
+import os
 
 class file_store:
   def read_json(self, file_name: str) -> object:
@@ -6,6 +7,10 @@ class file_store:
       return None
     
     try:
+      if os.path.getsize(file_name) == 0:
+        print("File " + file_name.split("\\")[-1] + " is empty.")
+        return None
+
       with open(file_name, 'r') as file:
         data = json.load(file)
       print(f"Data read from {file_name} successfully.")
