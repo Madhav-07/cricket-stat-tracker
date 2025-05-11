@@ -1,5 +1,5 @@
 from flask import Flask
-from models.player_stats_record import player_stats_record
+from backend.models.player_stats_record_model import player_stats_record
 
 app = Flask(__name__)
 

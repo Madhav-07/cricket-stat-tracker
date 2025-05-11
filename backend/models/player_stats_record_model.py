@@ -2,7 +2,7 @@ from models.batting_model import batting_input
 from models.bowling_model import bowling_input, overs_model
 from models.player_model import player_model, player_input
 
-class player_stats_record:
+class player_stats_record_model:
   player_records: dict[str, dict[int, player_model]]
 
   def __init__(self, **kwargs):
@@ -31,7 +31,7 @@ class player_stats_record:
   
 if __name__ == "__main__":
   from testing.test_utils import expect
-  player_stats = player_stats_record()
+  player_stats = player_stats_record_model()
   expect(player_stats.to_dict()).to_equal({})
 
   player_inp = player_input(
@@ -112,7 +112,7 @@ if __name__ == "__main__":
       }
     }
   }
-  new_player_stats = player_stats_record(**inp)
+  new_player_stats = player_stats_record_model(**inp)
   expect(new_player_stats.to_dict()).to_equal(inp)
 
   from constants import player_stats_record_sample_path
