@@ -10,12 +10,13 @@ type CurrentYearResponse = {
 @Injectable({
   providedIn: 'root'
 })
-export class AppService {
+export class CurrentYearService {
   private apiUrl = environment.apiUrl;
 
   constructor(private httpClient: HttpClient) {}
 
   getCurrentYear(): Observable<CurrentYearResponse> {
+    console.log(`${this.apiUrl}`);
     return this.httpClient.get<CurrentYearResponse>(`${this.apiUrl}/year`)
   }
 }

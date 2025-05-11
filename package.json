@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "backend": "cd backend && python -m flask --app controller run --debug",
+    "backend": "cd backend && python -m flask --app controller run",
     "frontend": "cd frontend && npm run start"
   },
   "keywords": [],

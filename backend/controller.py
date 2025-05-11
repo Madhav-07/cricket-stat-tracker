@@ -1,4 +1,5 @@
 from flask import Flask, Blueprint, jsonify
+from flask_cors import CORS
 from service import service
 
 service_instance = service()
@@ -32,4 +33,5 @@ def add_or_update_player(name):
   pass
 
 app = Flask(__name__)
+CORS(app)
 app.register_blueprint(api)
